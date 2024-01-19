@@ -1,0 +1,14 @@
+:root {
+  --background-color1: rgb(43, 43, 43);
+  --background-color2: rgb(22, 22, 22);
+  --text-color1: #00a3e0;
+  --text-color2: #f4f4f4;
+  --text-color3: #dbdbdb;
+  --text-color4: #00aef3;
+  --text-color5: #ffffff;
+  --dot-color: #e8e6e6;
+}
+
+* {
+  background-color: var(--background-color1);
+}
