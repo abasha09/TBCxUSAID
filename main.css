@@ -1,14 +1,117 @@
 :root {
   --background-color1: rgb(43, 43, 43);
   --background-color2: rgb(22, 22, 22);
+  --background-color3: #1a1e1f;
   --text-color1: #00a3e0;
   --text-color2: #f4f4f4;
   --text-color3: #dbdbdb;
   --text-color4: #00aef3;
   --text-color5: #ffffff;
+  --hover1: rgb(170, 170, 170);
   --dot-color: #e8e6e6;
 }
 
 * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+body {
   background-color: var(--background-color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar {
+  position: sticky;
+  background-color: var(--background-color3);
+  width: 100%;
+  height: 85px;
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+  color: var(--text-color2);
+  font-size: 14px;
+  font-weight: 400px;
+}
+.navbar-list li {
+  background-color: var(--background-color3);
+  padding: 0 10px;
+  cursor: pointer;
+}
+.navbar-list li:hover {
+  color: var(--text-color1);
+  transition: 0.5s;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url("./assets/components-images/meeting.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 352px;
+  width: 100%;
+}
+
+.hero-title {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 20%;
+}
+
+.hero-title span {
+  display: flex;
+  color: var(--text-color2);
+  font-weight: 600;
+  line-height: 67.2px;
+}
+.hero-h3 {
+  font-size: 42px;
+  color: var(--text-color2);
+}
+.hero-text2 {
+  font-size: 34px;
+}
+.info {
+  margin-top: 50px;
+  text-align: left;
+  max-width: 960px;
+
+  width: 100%;
+  line-height: 44.8px;
+  font-size: 28px;
+  color: var(--text-color2);
+}
+.info p {
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+.info a {
+  text-decoration: none;
+  color: var(--text-color4);
+  font-size: 20px;
+}
+.info a:visited {
+  color: var(--text-color4);
+}
+.info a:hover {
+  color: var(--hover1);
 }
