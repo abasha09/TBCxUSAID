@@ -6,7 +6,9 @@
   --text-color2: #f4f4f4;
   --text-color3: #dbdbdb;
   --text-color4: #00aef3;
+  --hyperlink-color: #00aeef;
   --text-color5: #ffffff;
+  --border-color: #555555;
   --hover1: rgb(170, 170, 170);
   --dot-color: #e8e6e6;
 }
@@ -24,6 +26,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 85px;
 }
 
 .flex {
@@ -33,10 +36,18 @@ body {
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
+  top: 0;
   background-color: var(--background-color3);
   width: 100%;
   height: 85px;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background-color: var(--background-color1);
+  opacity: 0.95;
 }
 
 .navbar-list {
@@ -49,9 +60,9 @@ body {
   font-weight: 400px;
 }
 .navbar-list li {
-  background-color: var(--background-color3);
   padding: 0 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .navbar-list li:hover {
   color: var(--text-color1);
@@ -74,8 +85,8 @@ body {
 }
 
 .hero-title {
-  position: absolute;
-  left: 20%;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .hero-title span {
@@ -83,10 +94,12 @@ body {
   color: var(--text-color2);
   font-weight: 600;
   line-height: 67.2px;
+  padding: 0 20px;
 }
-.hero-h3 {
+.hero h3 {
   font-size: 42px;
   color: var(--text-color2);
+  padding: 0 20px;
 }
 .hero-text2 {
   font-size: 34px;
@@ -102,12 +115,14 @@ body {
 }
 .info p {
   font-weight: 300;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  padding: 20px 0;
 }
 .info a {
   text-decoration: none;
   color: var(--text-color4);
   font-size: 20px;
+  /* padding: 0 20px; */
 }
 .info a:visited {
   color: var(--text-color4);
@@ -116,57 +131,74 @@ body {
   color: var(--hover1);
 }
 
+/* Courses styles */
 .courses {
-  background-color: var(--background-color3);
+  background-color: var(--background-color2);
   width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 950px;
 }
 
 .courses h2 {
-  color: var(--text-color2);
+  max-width: 1020px;
+  width: 100%;
+  padding: 0 30px;
+  font-size: 24px;
+  color: var(--text-color3);
   font-weight: 300;
+  text-align: left;
+  margin: 30px 0 60px 0;
 }
 
-.courses-container li {
-  list-style: none;
-  width: 100%;
-  height: 100%;
-}
-.courses-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-flow: column;
-}
-.courses-item {
+.courses-card {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   gap: 20px;
-  border: 0.5px solid var(--text-color3);
   max-width: 300px;
   width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
 }
-.courses-details {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.courses-card img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 6px 6px 0px 0px;
+}
+.card-h3,
+.card-a {
   padding: 20px;
 }
-.courses-details img {
-  margin-top: 20px;
-  color: var(--text-color1);
+.card-h3 {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-color2);
 }
-.courses p {
+.card-p {
   font-size: 14px;
-  color: var(--text-color3);
-}
-.courses h4 {
-  color: var(--text-color3);
+  color: var(--text-color2);
+  padding: 0 20px;
+  margin-bottom: 50px;
   font-weight: 300;
 }
-.courses-details a {
+.card-a,
+.card-a:visited {
   text-decoration: none;
-  color: var(--text-color1);
-  text-align: center;
+  color: var(--hyperlink-color);
 }
-.courses-details a img {
-  padding: 0 10px;
+.card-a:hover {
+  color: var(--text-color1);
 }
