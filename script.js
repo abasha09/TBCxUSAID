@@ -69,6 +69,7 @@ for (i = 0; i < acc.length; i++) {
       openAccordion.classList.remove("active-accordion");
       var openPanel = openAccordion.nextElementSibling;
       openPanel.style.maxHeight = null;
+      openPanel.classList.remove("open-panel");
     }
 
     // Toggle the active class and adjust the max height
@@ -76,8 +77,10 @@ for (i = 0; i < acc.length; i++) {
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
+      panel.classList.remove("open-panel");
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.classList.add("open-panel");
     }
 
     // Update the currently open accordion
