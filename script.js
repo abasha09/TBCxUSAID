@@ -1,4 +1,4 @@
-//onScroll navbar transparent function
+//onScroll navbar transparent functionlity
 
 document.addEventListener("scroll", () => {
   const header = document.querySelector("nav");
@@ -9,7 +9,7 @@ document.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
-// Carousel function
+// Carousel functionality
 
 let slideIndex = 0;
 let slideTimeout; // Variable to store the timeout ID
@@ -54,4 +54,33 @@ function showSlides() {
   slideTimeout = setTimeout(function () {
     plusSlides(1); // Change image every 5 seconds
   }, 5000);
+}
+
+// Accordion Functionality
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+var openAccordion = null;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    // Close the previously opened accordion
+    if (openAccordion && openAccordion !== this) {
+      openAccordion.classList.remove("active-accordion");
+      var openPanel = openAccordion.nextElementSibling;
+      openPanel.style.maxHeight = null;
+    }
+
+    // Toggle the active class and adjust the max height
+    this.classList.toggle("active-accordion");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+
+    // Update the currently open accordion
+    openAccordion = this;
+  });
 }

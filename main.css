@@ -20,6 +20,11 @@
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
 }
+
+a {
+  text-decoration: none;
+}
+
 body {
   background-color: var(--background-color1);
   display: flex;
@@ -305,4 +310,81 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/* Accrodion Section Styles */
+
+.accordion-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--background-color2);
+}
+
+.accrodion-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px 100px;
+  padding: 20px;
+}
+
+.accrodion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.accrodion-title h3 {
+  font-size: 24px;
+  color: var(--text-color2);
+  font-weight: 300;
+}
+
+.accrodion-title a {
+  color: var(--text-color4);
+  font-size: 20px;
+}
+.accrodion-title a:hover {
+  color: var(--hover1);
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: var(--background-color2);
+  color: var(--text-color2);
+  cursor: pointer;
+  padding: 25px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: var(--background-color2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+.panel p {
+  color: var(--text-color3);
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* accordion arrows */
+
+.accordion:after {
+  content: "\2304"; /* Unicode character for "plus" sign (+) */
+  color: var(--text-color2);
+  float: right;
+}
+
+.active-accordion:after {
+  content: "\2303"; /* Unicode character for "minus" sign (-) */
 }
