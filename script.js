@@ -87,3 +87,10 @@ for (i = 0; i < acc.length; i++) {
     openAccordion = this;
   });
 }
+
+// Mobile Sidebar Navigation Functionality
+document
+  .querySelector(".sidebar .toggle-btn")
+  .addEventListener("click", function () {
+    document.querySelector(".sidebar").classList.toggle("active");
+  });
